@@ -24,4 +24,3 @@ pub enum Connection {
     Bar(bar::Connection),
     Word(word::Connection),
 }
-

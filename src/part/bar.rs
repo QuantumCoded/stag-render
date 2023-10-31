@@ -10,6 +10,5 @@ pub enum Attachment {}
 
 #[derive(Debug)]
 pub enum Connection {
-    Origin
+    Origin,
 }
-
