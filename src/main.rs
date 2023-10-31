@@ -1,20 +1,22 @@
-use crate::rkpart::{bar::Bar, word::Word, RKGraph, RKPart, RKNode};
+#![allow(dead_code)]
 
-mod rkpart;
+use part::*;
+use petgraph::{dot::Dot, Graph};
+
+mod part;
 
 fn main() {
-    let mut rkgraph = RKGraph::new();
+    let mut graph: Graph<part::Part, part::Link> = Graph::new();
 
-    let clause = rkgraph.add_node(RKPart::Bar(Bar::ClauseBar));
-    let subject = rkgraph.add_node(RKPart::Word(Word::LeftWord("king".into())));
-    let subj_mod = rkgraph.add_node(RKPart::Word(Word::DiagWord("The".into())));
-    let verb = rkgraph.add_node(RKPart::Word(Word::RightWord("ran".into())));
-    let prep = rkgraph.add_node(RKPart::Word(Word::DiagWord("to".into())));
-    let prep_obj = rkgraph.add_node(RKPart::Word(Word::RightWord("throne".into())));
-    let prep_obj_mod = rkgraph.add_node(RKPart::Word(Word::DiagWord("his".into())));
+    let bar = graph.add_node(Part::Bar(bar::Bar::Clause));
+    let sub = graph.add_node(Part::Word(word::Word::Left("She".into())));
+    let vrb = graph.add_node(Part::Word(word::Word::Right("ran".into())));
 
-    rkgraph.add_edge(clause, subject, rkgraph.node_weight(clause).unwrap()
-    .attach())
+    graph.add_edge(bar, sub, Link::Connection(Connection::Bar(bar::Connection::Origin)));
+    graph.add_edge(bar, vrb, Link::Connection(Connection::Bar(bar::Connection::Origin)));
 
-    println!("Hello, world!");
+    let out = Dot::new(&graph);
+
+    println!("{out:?}");
 }
+
