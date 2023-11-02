@@ -1,16 +1,16 @@
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Word {
     Diagonal(String),
     Left(String),
     Right(String),
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Attachment {
     Under,
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Connection {
     Left,
     Right,

@@ -1,14 +1,14 @@
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Bar {
     Clause,
     Complement,
     Object,
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Attachment {}
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Connection {
     Origin,
 }

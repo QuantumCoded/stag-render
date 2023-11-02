@@ -1,25 +1,25 @@
 pub mod bar;
 pub mod word;
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Part {
     Bar(bar::Bar),
     Word(word::Word),
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Link {
     Attachment(Attachment),
     Connection(Connection),
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Attachment {
     Bar(bar::Attachment),
     Word(word::Attachment),
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub enum Connection {
     Bar(bar::Connection),
     Word(word::Connection),
