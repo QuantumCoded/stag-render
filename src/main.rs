@@ -6,57 +6,73 @@ use std::collections::HashMap;
 
 mod part;
 
-fn walk_graph(graph: &Graph<Part, Link>, root: NodeIndex, other: &mut Graph<Part, Link>) {
-    for node in graph.neighbors(root) {
-        walk_graph(graph, node, other);
+fn walk_phase_1(
+    idx: NodeIndex,
+    part_graph: &Graph<Part, Link>,
+    svg_graph: &mut Graph<String, Vec2>,
+    idx_map: &mut HashMap<NodeIndex, NodeIndex>,
+) {
+    // postorder transversal
+    for idx in part_graph.neighbors(idx) {
+        walk_phase_1(idx, part_graph, svg_graph, idx_map)
     }
 
-    // this point on will always be postorder
-    let node = graph.node_weight(root);
+    // postorder beyond this point
+    
+    let part = part_graph.node_weight(idx).expect("missing node weight in part graph");
 
-    println!("{node:?}");
+    println!("{part:?}");
 
-    // if the current node is alreay on the second graph then we just
-    // need to do its parents. use the map for checking for nodes.
+    // collect all the part's attachments
+    let attachments: Vec<_> = part_graph.edges(idx).filter_map(|edge| {
+        let link = edge.weight();
 
-    // add the node from the first graph to the second one
-    other.add_node(node.unwrap().clone());
+        match link {
+            Link::Attachment(attachment) => Some(attachment),
+            _ => None,
+        }
+    })
+    .collect();
 
-    // copy the parents to the other graph
+    let svg = part.svg(attachments);
+    println!("{svg:?}");
+    let svg_idx = svg_graph.add_node(svg);
 
-    // form the edges between these two, possibly needs a map
+    // add indices to the index map
+    idx_map.insert(idx, svg_idx);
 }
 
 fn main() {
-    let mut graph: Graph<Part, Link> = Graph::new();
+    let mut part_graph: Graph<Part, Link> = Graph::new();
 
-    let bar = graph.add_node(Part::Bar(bar::Bar::Clause));
-    let sub = graph.add_node(Part::Word(word::Word::Left("girl".into())));
-    let vrb = graph.add_node(Part::Word(word::Word::Right("ran".into())));
-    let art = graph.add_node(Part::Word(word::Word::Diagonal("The".into())));
+    let bar = part_graph.add_node(Part::Bar(bar::Bar::Subject));
+    let sub = part_graph.add_node(Part::Word(word::Word::Left("It".into())));
+    let vrb = part_graph.add_node(Part::Word(word::Word::Right("works".into())));
+    // let art = graph.add_node(Part::Word(word::Word::Diagonal("The".into())));
 
-    graph.add_edge(
+    part_graph.add_edge(
         bar,
         sub,
         Link::Connection(Connection::Bar(bar::Connection::Origin)),
     );
 
-    graph.add_edge(
+    part_graph.add_edge(
         bar,
         vrb,
         Link::Connection(Connection::Bar(bar::Connection::Origin)),
     );
 
-    graph.add_edge(
+    /* graph.add_edge(
         sub,
         art,
         Link::Attachment(Attachment::Word(word::Attachment::Under)),
-    );
+    ); */
 
-    let out = Dot::new(&graph);
+    let out = Dot::new(&part_graph);
     println!("{out:?}");
 
-    let mut graph2: Graph<Part, Link> = Graph::new();
+    let mut svg_graph = Graph::new();
+    let mut idx_map = HashMap::new();
 
-    walk_graph(&graph, bar, &mut graph2);
+    walk_phase_1(bar, &part_graph, &mut svg_graph, &mut idx_map);
 }
