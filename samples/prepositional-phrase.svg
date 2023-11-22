@@ -1,0 +1,30 @@
+<!--
+    sin(45 degrees) = 1 / √(2) ≈ 0.7071067812
+    cos(45 degrees) = 1 / √(2) ≈ 0.7071067812
+-->
+<svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        * {
+            font-family: monospace;
+        }
+
+        .prep-object {
+            /* transform: translate(calc(8*0.7071067812ch),calc(8*0.7071067812ch)); */
+        }
+    </style>
+
+    <!-- preposition -->
+    <g transform-origin="0 0" transform="rotate(45)">
+        <text fill="red" x="6ch" y="0" text-anchor="end" alignment-baseline="after-edge">
+            prep
+        </text>
+        <line x1="0" x2="8ch" y1="0" y2="0" stroke="red" />
+    </g>
+    <!-- object of preposition -->
+    <g class="prep-object" style="transform: translate(5.656854249ch,5.656854249ch)">
+        <text fill="red" x="8ch" y="0" text-anchor="end" alignment-baseline="after-edge" >
+            object
+        </text>
+        <line x1="0" x2="10ch" y1="0" y2="0" stroke="red" />
+    </g>
+</svg>

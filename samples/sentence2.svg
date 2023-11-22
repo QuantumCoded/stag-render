@@ -1,0 +1,71 @@
+<svg width="350" height="170" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        * {
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        line {
+            stroke-linecap: round;
+        }
+    </style>
+    
+    <!-- the king (vbar) ran to his throne -->
+    <g style="transform: translate(0,1.5em) translate(20px,20px)">
+        <text fill="red" x="2.684924241em" y="0" text-anchor="middle" dominant-baseline="text-after-edge">
+            king
+        </text>
+        <line x1="0" x2="5.369848481em" y1="0" y2="0" stroke="red" />
+
+        <!-- the -->
+        <g style="transform: translate(1.2em)">
+            <g transform="rotate(45) " transform-origin="0px 0px">
+                <text fill="red" x="2.1em" y="0" text-anchor="middle" dominant-baseline="text-after-edge">
+                    The
+                </text>
+                <line x1="0" x2="4.2em" y1="0" y2="0" stroke="red" />
+            </g>
+        </g>
+
+        <!-- (vbar) ran to his throne -->
+        <g style="transform: translate(8.949747468ch)">
+            <line x1="0" x2="0" y1="-1.5em" y2="1.5em" stroke="red" />
+
+            <!-- ran to his throne-->
+            <g>
+                <text fill="red" x="5.472792206em" y="0" text-anchor="middle" dominant-baseline="text-after-edge">
+                    ran
+                </text>
+                <line x1="0" x2="10.94558441em" y1="0" y2="0" stroke="red" />
+
+                <!-- to his throne -->
+                <g style="transform: translate(2ch)">
+                    <g transform="rotate(45) " transform-origin="0px 0px">
+                        <text fill="red" x="1.8em" y="0" text-anchor="middle" dominant-baseline="text-after-edge">
+                            to
+                        </text>
+                        <line x1="0" x2="3.6em" y1="0" y2="0" stroke="red" />
+                    </g>
+
+                    <!-- his throne -->
+                    <g style="transform: translate(2.545584412em,2.545584412em)">
+                        <text fill="red" x="3em" y="0" text-anchor="middle" dominant-baseline="text-after-edge">
+                            throne
+                        </text>
+                        <line x1="0" x2="6em" y1="0" y2="0" stroke="red" />
+
+                        <!-- his -->
+                        <g style="transform: translate(2ch)">
+                            <g transform="rotate(45) " transform-origin="0px 0px">
+                                <text fill="red" x="2.1em" y="0" text-anchor="middle" dominant-baseline="text-after-edge">
+                                    his
+                                </text>
+                                <line x1="0" x2="4.2em" y1="0" y2="0" stroke="red" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

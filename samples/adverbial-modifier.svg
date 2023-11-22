@@ -1,0 +1,15 @@
+<svg viewBox="-20 -20 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        * {
+            font-family: monospace;
+        }
+    </style>
+    <g transform="rotate(45)" transform-origin="0px 0px">
+        <text fill="red" x="16ch" y="1.5em" text-anchor="end" alignment-baseline="after-edge">
+            adverbial mod.
+        </text>
+        <line x1="0" x1="0" y1="0" y2="1.5em" stroke="red" />
+        <line x1="0" x2="18ch" y1="1.5em" y2="1.5em" stroke="red" />
+    </g>
+    
+</svg>

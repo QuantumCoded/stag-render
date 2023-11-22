@@ -1,0 +1,13 @@
+<svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        * {
+            font-family: monospace;
+        }
+    </style>
+    <g>
+        <text fill="red" x="-2ch" y="0" text-anchor="end" alignment-baseline="after-edge">
+            word
+        </text>
+        <line x1="0" x2="-8ch" y1="0" y2="0" stroke="red" />
+    </g>
+</svg>

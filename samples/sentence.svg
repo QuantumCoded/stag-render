@@ -1,0 +1,71 @@
+<svg width="350" height="170" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        * {
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        line {
+            stroke-linecap: round;
+        }
+    </style>
+    
+    <!-- the king (vbar) ran to his throne -->
+    <g style="transform: translate(0,1.5em) translate(20px,20px)">
+        <text fill="red" x="4.474873734ch" y="0" text-anchor="middle" alignment-baseline="after-edge">
+            king
+        </text>
+        <line x1="0" x2="8.949747468ch" y1="0" y2="0" stroke="red" />
+
+        <!-- the -->
+        <g style="transform: translate(2ch)">
+            <g transform="rotate(45) " transform-origin="0px 0px">
+                <text fill="red" x="3.5ch" y="0" text-anchor="middle" alignment-baseline="after-edge">
+                    The
+                </text>
+                <line x1="0" x2="7ch" y1="0" y2="0" stroke="red" />
+            </g>
+        </g>
+
+        <!-- (vbar) ran to his throne -->
+        <g style="transform: translate(8.949747468ch)">
+            <line x1="0" x2="0" y1="-1.5em" y2="1.5em" stroke="red" />
+
+            <!-- ran to his throne-->
+            <g>
+                <text fill="red" x="9.121320344ch" y="0" text-anchor="middle" alignment-baseline="after-edge">
+                    ran
+                </text>
+                <line x1="0" x2="18.24264069ch" y1="0" y2="0" stroke="red" />
+
+                <!-- to his throne -->
+                <g style="transform: translate(2ch)">
+                    <g transform="rotate(45) " transform-origin="0px 0px">
+                        <text fill="red" x="3ch" y="0" text-anchor="middle" alignment-baseline="after-edge">
+                            to
+                        </text>
+                        <line x1="0" x2="6ch" y1="0" y2="0" stroke="red" />
+                    </g>
+
+                    <!-- his throne -->
+                    <g style="transform: translate(4.242640687ch,4.242640687ch)">
+                        <text fill="red" x="5ch" y="0" text-anchor="middle" alignment-baseline="after-edge">
+                            throne
+                        </text>
+                        <line x1="0" x2="10ch" y1="0" y2="0" stroke="red" />
+
+                        <!-- his -->
+                        <g style="transform: translate(2ch)">
+                            <g transform="rotate(45) " transform-origin="0px 0px">
+                                <text fill="red" x="3.5ch" y="0" text-anchor="middle" alignment-baseline="after-edge">
+                                    his
+                                </text>
+                                <line x1="0" x2="7ch" y1="0" y2="0" stroke="red" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
